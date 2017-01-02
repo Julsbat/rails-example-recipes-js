@@ -35,4 +35,7 @@ it comes from the index.html.erb in ingredients :
      <%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
      
 
+#### 4. 
+
+the page loads much faster
 
