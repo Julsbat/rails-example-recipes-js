@@ -22,3 +22,17 @@ You will be asked to
 * switch on Turbolinks
 * Use AJAX to create and "inline editing form"
 
+### Answer
+
+#### 1.
+
+    rake db:migrate
+    
+#### 2. 
+
+it comes from the index.html.erb in ingredients :
+
+     <%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %>
+     
+
+
