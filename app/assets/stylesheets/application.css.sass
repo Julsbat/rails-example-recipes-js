@@ -15,12 +15,34 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets"
 @import "bootstrap"
+
+body
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+#main-container
+  flex: 1
 
 #headerbar
   background-color: green
   padding-bottom: 1em
+  h2
+    a
+      color: black
+  img
+    height: 80px
+
+#footerbar
+  margin-top: 40px
+  padding: 40px 0
+  background-color: green
+  a
+    color: #ddd
+
+.subheading
+  background-color: #aaffaa
 
 #recipe_instructions
   height: 200px

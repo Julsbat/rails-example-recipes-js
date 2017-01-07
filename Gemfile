@@ -1,9 +1,8 @@
 source 'https://rubygems.org'
 
 
-# Rails Version currently supported by railsinstallier (as of oct 2015)
-gem 'rails', '4.2.0'
-gem 'tzinfo-data'
+ruby '2.2.4'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -11,9 +10,9 @@ gem 'sqlite3'
 # ======== Asset Pipeline ===========
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'bootstrap_form'
-gem 'autoprefixer-rails'
+# gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -21,7 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -39,11 +38,11 @@ group :development, :test do
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'sprockets'
-  gem 'sprockets-es6', require: 'sprockets/es6'
 end
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rezepte</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Cookin' on Rails  - <%= controller_name %> <%= action_name %></title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= controller_name %> <%= action_name %>">
   <div class="container-fullwidth" id="headerbar">
     <div class="container">
-      <%= link_to root_path do %>
-        <%= image_tag "logo.png" %>
-      <% end %>
+      <h2>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.svg" %> Cookin' on Rails
+        <% end %>
+      </h2>
      </div>
-
   </div>
 
   <div id="main-container" class="container">
@@ -26,7 +27,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row subheading">
       <div class="col-xs-3">
         &nbsp;
       </div>
@@ -38,16 +39,28 @@
     <div class="row">
       <div id="sidebar" class="col-xs-3">
         <ul class="nav nav-pills nav-stacked">
-          <li data-confirm="Are you sure?"><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Rezept suchen", search_recipes_path %></li>
-          <li><%= link_to "Rezept erstellen", new_recipe_path %></li>
-          <li><%= link_to "About", about_path %></li>
+          <li><%= link_to_unless_current "Home", root_path %></li>
+          <li><%= link_to_unless_current "All Recipes", recipes_path %></li>
+          <li><%= link_to_unless_current "Search Recipe", search_recipes_path %></li>
+          <li><%= link_to_unless_current "Add New Repice", new_recipe_path %></li>
+          <li><%= link_to_unless_current "JS Playground", playground_path %></li>
+          <li><%= link_to_unless_current "About", about_path %></li>
+          <li><%= link_to_unless_current "ToDo", todo_path %></li>
+
         </ul>
       </div>
       <div id="content" class="col-xs-9">
         <%= yield %>
       </div>
     </div>
+  </div>
+
+  <div class="container-fullwidth" id="footerbar">
+    <div class="container">
+      Icon made by <a href="http://www.flaticon.com/free-icon/kitchen-cooking-utensils_26253">Freepik</a> from <a href="http://www.flaticon.com">www.flaticon.com</a> |
+      <a href="https://upload.wikimedia.org/wikipedia/commons/2/25/Koelkast_open.jpg">picture of fridge</a> by    M.Minderhoud under CC-BY-SA. |
+      Recipes from <a href="https://www.kochwiki.org/">kochwiki</a> under CC-BY-SA.
+     </div>
   </div>
 
 </body>
