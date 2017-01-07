@@ -1,1 +1,2 @@
-$("#ingredient_<%= @ingredient.id %>").find('span').html("<%= render 'form' %>");
+$("#ingredient_<%= @ingredient.id %>").find("span").html('<%= j render "form" %>');
+$("#ingredient_<%= @ingredient.id %>").find("a.edit_ingredient").hide();

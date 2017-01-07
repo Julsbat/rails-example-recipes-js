@@ -11,3 +11,7 @@ $(document).ready(() => {
 
     })
 })
+
+//call the ready function on regular page loads and on turbolinks
+$(document).ready(ready);
+$(document).on('page:load', ready);
